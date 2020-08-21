@@ -1,0 +1,16 @@
+{
+  "name": "splitbot",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "search": "node -r dotenv/config ./search.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "Loren Sands-Ramshaw",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "splitwise": "^1.0.0"
+  }
+}
