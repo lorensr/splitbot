@@ -19,6 +19,8 @@ async function search() {
     console.log(`${when}\t$ ${cost}\t${description}`)
   })
 
+  console.log(`\nhttps://secure.splitwise.com/#/groups/1462863\n`)
+
   // Promise.all([
   //   sw.getGroup({ id: group_id }),
   //   sw.getExpenses({ id: group_id }),
