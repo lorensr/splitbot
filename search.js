@@ -5,11 +5,15 @@ const sw = Splitwise({
   consumerSecret: process.env.SECRET,
 })
 
+const GROUP_ID = '1462863'
+
 async function search() {
-  const expenses = await sw.getExpenses({ id: '1462863', limit: 200 })
+  const expenses = await sw.getExpenses({ id: GROUP_ID, limit: 200 })
   const optIn = expenses.filter(({ description }) =>
     /opt.{0,2}in/i.test(description)
   )
+
+  console.log('\n```')
 
   optIn.forEach(({ cost, date, description }) => {
     const when = new Date(date).toLocaleDateString('en-US', {
@@ -19,7 +23,8 @@ async function search() {
     console.log(`${when}\t$ ${cost}\t${description}`)
   })
 
-  console.log(`\nhttps://secure.splitwise.com/#/groups/1462863\n`)
+  console.log('```')
+  console.log(`\nhttps://secure.splitwise.com/#/groups/${GROUP_ID}\n`)
 
   // Promise.all([
   //   sw.getGroup({ id: group_id }),
