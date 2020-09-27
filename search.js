@@ -15,12 +15,15 @@ async function search() {
 
   console.log('\n```')
 
-  optIn.forEach(({ cost, date, description }) => {
+  optIn.forEach(({ cost, date, description, created_by }) => {
     const when = new Date(date).toLocaleDateString('en-US', {
       month: 'numeric',
       day: 'numeric',
     })
-    console.log(`${when}\t$ ${cost}\t${description}`)
+
+    console.log(
+      `${when}\t$ ${cost}\t\t${created_by.first_name}\t\t${description}`
+    )
   })
 
   console.log('```')
